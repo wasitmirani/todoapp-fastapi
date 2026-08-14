@@ -9,5 +9,3 @@ class Settings(BaseSettings):
 
 # Create a settings instance
 settings = Settings()
-
-print(settings.DB_URL)

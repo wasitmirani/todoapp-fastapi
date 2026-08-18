@@ -11,6 +11,6 @@ task_router = APIRouter(prefix="/tasks", tags=["tasks"])
 def store_task(task: TaskCreateDto, db: Session = Depends(get_db)):
     return {"message": "Task created successfully", "task": create_task(task, db)}
 
-@task_router.get('/')
-def get_tasks(db: Session = Depends(get_db)):
+@task_router.get('/items')
+def get_list(db: Session = Depends(get_db)):
     return get_tasks(db)

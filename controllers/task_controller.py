@@ -15,3 +15,8 @@ def create_task(task: TaskCreateDto,db: Session | None = None) -> TaskCreateDto:
     db.commit()
     db.refresh(new_task)
     return new_task
+
+def get_tasks(db:Session):
+    tasks= db.query(Task).all()
+    return {"tasks": tasks,"message": "Tasks fetched successfully","status": "success"}
+
